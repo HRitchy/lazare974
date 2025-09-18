@@ -11262,6 +11262,7 @@ const Jv = "/assets/installation_wallbox-DCk5sAvU.jpg",
 function Fv() {
   const [isSubmitting, setIsSubmitting] = Nl.useState(!1);
   const [formSent, setFormSent] = Nl.useState(!1);
+  const [submissionError, setSubmissionError] = Nl.useState(null);
   const [expandedFaq, setExpandedFaq] = Nl.useState(0);
   const processSteps = [{
     label: "Étape 1",
@@ -11295,17 +11296,32 @@ function Fv() {
     question: "Proposez-vous un service après-vente ?",
     answer: "Oui, Lazare974.tech assure un support 7j/7 par téléphone et peut intervenir sur site sous 48h en cas de besoin. Des contrats de maintenance préventive sont également disponibles."
   }];
-  const handleSubmit = T => {
+  const handleSubmit = async T => {
     T.preventDefault();
     if (isSubmitting) return;
     setIsSubmitting(!0);
     setFormSent(!1);
+    setSubmissionError(null);
     const O = T.target;
-    setTimeout(() => {
+    const q = new FormData(O);
+    const H = Object.fromEntries(q.entries());
+    try {
+      const D = await fetch("https://n8n.lazare974.tech/webhook/680f9325-0fc4-4f34-af1e-6d3107d4a8b5", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(H)
+      });
+      if (!D.ok) throw new Error("Failed to submit form");
       O.reset();
-      setIsSubmitting(!1);
       setFormSent(!0);
-    }, 1200);
+      setSubmissionError(null);
+    } catch (D) {
+      setSubmissionError("Une erreur est survenue lors de l'envoi du formulaire. Merci de réessayer.");
+    } finally {
+      setIsSubmitting(!1);
+    }
   };
   const toggleFaq = T => {
     setExpandedFaq(O => O === T ? null : T);
@@ -11918,7 +11934,12 @@ function Fv() {
                     placeholder: "Décrivez votre projet d'installation...",
                     required: !0
                   })]
-                }), formSent ? d.jsx("div", {
+                }), submissionError ? d.jsx("div", {
+                  className: "rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700",
+                  role: "alert",
+                  "aria-live": "polite",
+                  children: submissionError
+                }) : null, formSent ? d.jsx("div", {
                   className: "rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700",
                   role: "status",
                   "aria-live": "polite",
