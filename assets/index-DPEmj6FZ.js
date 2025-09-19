@@ -11804,9 +11804,9 @@ function Fv() {
                 children: [d.jsx(Ef, {
                   className: "h-5 w-5 text-primary"
                 }), d.jsx("a", {
-                  href: "tel:+262692000000",
+                  href: "tel:+262692677273",
                   className: "text-foreground hover:text-primary transition-colors",
-                  children: "+262 692 00 00 00"
+                  children: "+262 692 67 72 73"
                 })]
               }), d.jsxs("div", {
                 className: "flex items-center space-x-3",
@@ -12000,9 +12000,9 @@ function Fv() {
             className: "space-y-2 text-muted-foreground",
             children: [d.jsx("li", {
               children: d.jsx("a", {
-                href: "tel:+262692000000",
+                href: "tel:+262692677273",
                 className: "hover:text-primary transition-colors",
-                children: "+262 692 00 00 00"
+                children: "+262 692 67 72 73"
               })
             }), d.jsx("li", {
               children: d.jsx("a", {
