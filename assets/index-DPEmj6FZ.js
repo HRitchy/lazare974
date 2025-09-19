@@ -11846,7 +11846,7 @@ function Fv() {
               children: [d.jsx(ei, {
                 children: "Demande de devis"
               }), d.jsx(ai, {
-                children: "Remplissez ce formulaire pour recevoir votre devis personnalisé"
+                children: "Remplissez le formulaire : nous vous rappelons pour fixer un rendez-vous et finaliser votre devis personnalisé"
               })]
             }), d.jsx(ni, {
               className: "space-y-4",
