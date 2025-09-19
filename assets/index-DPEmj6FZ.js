@@ -11369,9 +11369,19 @@ function Fv() {
     }), d.jsx("section", {
       id: "accueil",
       className: "hero-gradient text-white py-20 hero-enhanced",
-      children: d.jsx("div", {
-        className: "container mx-auto px-4 text-center",
-        children: d.jsxs("div", {
+      children: d.jsxs("div", {
+        className: "container mx-auto px-4 text-center hero-inner",
+        children: [d.jsxs("div", {
+          className: "hero-ornaments",
+          "aria-hidden": !0,
+          children: [d.jsx("span", {
+            className: "hero-orb hero-orb-left"
+          }), d.jsx("span", {
+            className: "hero-orb hero-orb-right"
+          }), d.jsx("span", {
+            className: "hero-glow"
+          })]
+        }), d.jsxs("div", {
           className: "max-w-4xl mx-auto hero-content",
           children: [d.jsx("span", {
             className: "mb-6 inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-1 text-sm font-semibold uppercase tracking-widest",
