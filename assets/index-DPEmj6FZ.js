@@ -12232,7 +12232,7 @@ function Fv() {
               children: d.jsx("a", {
                 href: "mailto:contact@lazare974.tech",
                 className: "hover:text-primary transition-colors",
-                children: "contact@lazare974.tech"
+                children: "contact@lazare974"
               })
             }), d.jsx("li", {
               children: "La Réunion (974)"
