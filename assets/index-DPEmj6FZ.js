@@ -11329,9 +11329,9 @@ function Fv() {
   return d.jsxs("div", {
     className: "min-h-screen bg-background",
     children: [d.jsx("header", {
-      className: "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
+      className: "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 enhanced-header",
       children: d.jsxs("div", {
-        className: "container mx-auto px-4 flex h-16 items-center justify-between",
+        className: "container mx-auto px-4 flex h-16 items-center justify-between header-inner",
         children: [d.jsxs("div", {
           className: "flex items-center space-x-2",
           children: [d.jsx($u, {
@@ -11341,27 +11341,19 @@ function Fv() {
             children: "Lazare974.tech"
           })]
         }), d.jsxs("nav", {
-          className: "hidden md:flex items-center space-x-6",
-        children: [d.jsx("a", {
-          href: "#accueil",
-          className: "text-foreground hover:text-primary transition-colors",
-          children: "Accueil"
-        }), d.jsx("a", {
-          href: "#processus",
-          className: "text-foreground hover:text-primary transition-colors",
-          children: "Étapes"
-        }), d.jsx("a", {
-          href: "#services",
-          className: "text-foreground hover:text-primary transition-colors",
-          children: "Services"
-        }), d.jsx("a", {
-          href: "#apropos",
-          className: "text-foreground hover:text-primary transition-colors",
-          children: "À propos"
-        }), d.jsx("a", {
-          href: "#faq",
-          className: "text-foreground hover:text-primary transition-colors",
-          children: "FAQ"
+          className: "hidden md:flex items-center space-x-6 nav-links",
+          children: [d.jsx("a", {
+            href: "#processus",
+            className: "text-foreground hover:text-primary transition-colors",
+            children: "Étapes"
+          }), d.jsx("a", {
+            href: "#services",
+            className: "text-foreground hover:text-primary transition-colors",
+            children: "Services"
+          }), d.jsx("a", {
+            href: "#faq",
+            className: "text-foreground hover:text-primary transition-colors",
+            children: "FAQ"
         }), d.jsx("a", {
           href: "#contact",
           className: "text-foreground hover:text-primary transition-colors",
@@ -11376,11 +11368,11 @@ function Fv() {
       })
     }), d.jsx("section", {
       id: "accueil",
-      className: "hero-gradient text-white py-20",
+      className: "hero-gradient text-white py-20 hero-enhanced",
       children: d.jsx("div", {
         className: "container mx-auto px-4 text-center",
         children: d.jsxs("div", {
-          className: "max-w-4xl mx-auto",
+          className: "max-w-4xl mx-auto hero-content",
           children: [d.jsx("span", {
             className: "mb-6 inline-flex items-center justify-center rounded-full bg-white/10 px-4 py-1 text-sm font-semibold uppercase tracking-widest",
             children: "Installateur IRVE agréé"
@@ -11398,7 +11390,7 @@ function Fv() {
             children: [d.jsxs(Pu, {
               size: "lg",
               variant: "secondary",
-              className: "text-lg px-8 py-3",
+              className: "text-lg px-8 py-3 hero-cta",
               children: [d.jsx($u, {
                 className: "mr-2 h-5 w-5"
               }), "Devis gratuit"]
@@ -11406,7 +11398,7 @@ function Fv() {
               size: "lg",
               variant: "outline",
               asChild: !0,
-              className: "text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-primary",
+              className: "text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-primary hero-cta-alt",
               children: d.jsxs("a", {
                 href: "#contact",
                 className: "inline-flex items-center justify-center",
@@ -11416,7 +11408,7 @@ function Fv() {
               })
             })]
           }), d.jsxs("div", {
-            className: "mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-white/80",
+            className: "mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-white/80 hero-highlights",
             children: [d.jsxs("span", {
               className: "flex items-center gap-2",
               children: [d.jsx(Ft, {
@@ -11779,7 +11771,7 @@ function Fv() {
       })
     }), d.jsx("section", {
       id: "contact",
-      className: "py-20 bg-muted/30",
+      className: "py-20 bg-muted/30 contact-section",
       children: d.jsxs("div", {
         className: "container mx-auto px-4",
         children: [d.jsxs("div", {
@@ -11792,8 +11784,9 @@ function Fv() {
             children: "Demandez votre devis gratuit pour l'installation de votre borne de recharge"
           })]
         }), d.jsxs("div", {
-          className: "grid md:grid-cols-2 gap-12",
+          className: "grid md:grid-cols-2 gap-12 contact-grid",
           children: [d.jsxs("div", {
+            className: "contact-details-card",
             children: [d.jsx("h3", {
               className: "text-2xl font-bold mb-6",
               children: "Informations de contact"
@@ -11842,6 +11835,7 @@ function Fv() {
               })]
             })]
           }), d.jsxs(li, {
+            className: "contact-form-card",
             children: [d.jsxs(ti, {
               children: [d.jsx(ei, {
                 children: "Demande de devis"
@@ -11849,9 +11843,9 @@ function Fv() {
                 children: "Remplissez le formulaire : nous vous rappelons pour fixer un rendez-vous et finaliser votre devis personnalisé"
               })]
             }), d.jsx(ni, {
-              className: "space-y-4",
+              className: "space-y-4 contact-form-wrapper",
               children: d.jsxs("form", {
-                className: "space-y-4",
+                className: "space-y-4 contact-form",
                 onSubmit: handleSubmit,
                 children: [d.jsxs("div", {
                   className: "grid grid-cols-1 gap-4 sm:grid-cols-2",
@@ -11863,7 +11857,7 @@ function Fv() {
                     }), d.jsx("input", {
                       id: "first-name",
                       name: "firstName",
-                      className: "w-full mt-1 px-3 py-2 border rounded-md",
+                      className: "w-full mt-1 px-3 py-2 border rounded-md form-field",
                       type: "text",
                       autoComplete: "given-name",
                       required: !0
@@ -11876,7 +11870,7 @@ function Fv() {
                     }), d.jsx("input", {
                       id: "last-name",
                       name: "lastName",
-                      className: "w-full mt-1 px-3 py-2 border rounded-md",
+                      className: "w-full mt-1 px-3 py-2 border rounded-md form-field",
                       type: "text",
                       autoComplete: "family-name",
                       required: !0
@@ -11890,7 +11884,7 @@ function Fv() {
                   }), d.jsx("input", {
                     id: "email",
                     name: "email",
-                    className: "w-full mt-1 px-3 py-2 border rounded-md",
+                    className: "w-full mt-1 px-3 py-2 border rounded-md form-field",
                     type: "email",
                     autoComplete: "email",
                     required: !0
@@ -11903,7 +11897,7 @@ function Fv() {
                   }), d.jsx("input", {
                     id: "phone",
                     name: "phone",
-                    className: "w-full mt-1 px-3 py-2 border rounded-md",
+                    className: "w-full mt-1 px-3 py-2 border rounded-md form-field",
                     type: "tel",
                     autoComplete: "tel",
                     placeholder: "06 XX XX XX XX",
@@ -11917,7 +11911,7 @@ function Fv() {
                   }), d.jsx("input", {
                     id: "vehicle",
                     name: "vehicle",
-                    className: "w-full mt-1 px-3 py-2 border rounded-md",
+                    className: "w-full mt-1 px-3 py-2 border rounded-md form-field",
                     type: "text",
                     placeholder: "Ex: Tesla Model 3, Renault Zoe..."
                   })]
@@ -11929,7 +11923,7 @@ function Fv() {
                   }), d.jsx("textarea", {
                     id: "message",
                     name: "message",
-                    className: "w-full mt-1 px-3 py-2 border rounded-md",
+                    className: "w-full mt-1 px-3 py-2 border rounded-md form-field",
                     rows: "4",
                     placeholder: "Décrivez votre projet d'installation...",
                     required: !0
@@ -11945,7 +11939,7 @@ function Fv() {
                   "aria-live": "polite",
                   children: "Merci ! Votre demande a bien été envoyée. Nous vous recontacterons très prochainement."
                 }) : null, d.jsxs(Pu, {
-                  className: "w-full",
+                  className: "w-full form-submit",
                   type: "submit",
                   disabled: isSubmitting,
                   children: [d.jsx(Bd, {
@@ -11958,11 +11952,11 @@ function Fv() {
         })]
       })
     }), d.jsx("footer", {
-      className: "bg-background border-t py-12",
+      className: "bg-background border-t py-12 footer-accent",
       children: d.jsxs("div", {
-        className: "container mx-auto px-4",
+        className: "container mx-auto px-4 footer-container",
         children: [d.jsxs("div", {
-          className: "grid md:grid-cols-4 gap-8",
+          className: "grid md:grid-cols-3 gap-8 footer-grid",
           children: [d.jsxs("div", {
             children: [d.jsxs("div", {
               className: "flex items-center space-x-2 mb-4",
@@ -12014,20 +12008,6 @@ function Fv() {
               children: "La Réunion (974)"
             })]
           })]
-        }), d.jsxs("div", {
-            children: [d.jsx("h4", {
-              className: "font-semibold mb-4",
-              children: "Légal"
-            }), d.jsxs("ul", {
-              className: "space-y-2 text-muted-foreground",
-              children: [d.jsx("li", {
-                children: "Mentions légales"
-              }), d.jsx("li", {
-                children: "Politique de confidentialité"
-              }), d.jsx("li", {
-                children: "CGV"
-              })]
-            })]
           })]
         }), d.jsx("div", {
           className: "border-t mt-8 pt-8 text-center text-muted-foreground",
