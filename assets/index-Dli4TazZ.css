@@ -40,3 +40,28 @@
 .footer-grid>div{background:rgba(15,23,42,.5);border-radius:1.25rem;padding:1.5rem;border:1px solid rgba(148,163,184,.12);box-shadow:0 24px 48px -36px rgba(2,6,23,.85);backdrop-filter:blur(12px)}
 .footer-grid h4{font-weight:600}
 .footer-grid p,.footer-grid li{color:rgba(226,232,240,.8)}
+
+
+/* Hero refinements */
+.hero-gradient{background:radial-gradient(circle at 12% 18%,rgba(56,189,248,.38)0,rgba(56,189,248,0)45%),radial-gradient(circle at 80% 25%,rgba(34,197,94,.35)0,rgba(34,197,94,0)50%),linear-gradient(135deg,#0b1120 0%,#0f172a 55%,#020617 100%)}
+.hero-inner{position:relative;isolation:isolate;padding-block:clamp(1.5rem,5vw,3rem)}
+.hero-ornaments{position:absolute;inset:-22% -12%;pointer-events:none;overflow:hidden;filter:drop-shadow(0 40px 80px rgba(14,165,233,.35))}
+.hero-orb{position:absolute;border-radius:9999px;mix-blend-mode:screen;opacity:.7;animation:heroOrbFloat 16s ease-in-out infinite;background:radial-gradient(circle at center,rgba(56,189,248,.75)0,rgba(56,189,248,0)65%)}
+.hero-orb-left{width:clamp(18rem,30vw,26rem);height:clamp(18rem,30vw,26rem);top:-6rem;left:-8rem}
+.hero-orb-right{width:clamp(16rem,26vw,24rem);height:clamp(16rem,26vw,24rem);bottom:-8rem;right:-6rem;animation-delay:-4s;background:radial-gradient(circle at center,rgba(34,197,94,.6)0,rgba(34,197,94,0)65%)}
+.hero-glow{position:absolute;width:clamp(26rem,48vw,40rem);height:clamp(26rem,50vw,42rem);top:18%;left:50%;transform:translateX(-50%);background:radial-gradient(circle at center,rgba(59,130,246,.45)0,rgba(59,130,246,0)70%);filter:blur(45px);opacity:.55;animation:heroOrbFloat 20s ease-in-out infinite}
+.hero-content{position:relative;z-index:1;padding:clamp(2.5rem,5vw,3.75rem);border-radius:clamp(2rem,4vw,2.75rem);border:1px solid rgba(148,163,184,.22);background:linear-gradient(155deg,rgba(15,23,42,.88),rgba(8,47,73,.62));box-shadow:0 48px 96px -48px rgba(15,23,42,.9),inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(22px);overflow:hidden}
+.hero-content::after{content:"";position:absolute;inset:-1px;border-radius:inherit;background:radial-gradient(circle at 20% 0%,rgba(56,189,248,.25),rgba(56,189,248,0)60%);opacity:.75;pointer-events:none;mix-blend-mode:screen}
+.hero-content>*{position:relative;z-index:1}
+.hero-cta{background:linear-gradient(135deg,#22d3ee 0%,#0ea5e9 45%,#2563eb 100%);color:#0f172a;border:0;border-radius:9999px;box-shadow:0 32px 70px -32px rgba(14,165,233,.85),0 0 0 1px rgba(14,165,233,.45);transition:transform .35s ease,box-shadow .35s ease,filter .35s ease}
+.hero-cta:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 46px 100px -48px rgba(14,165,233,.95);filter:brightness(1.05)}
+.hero-cta-alt{border-radius:9999px;border-color:rgba(255,255,255,.45)!important;background:rgba(15,23,42,.45);box-shadow:0 26px 60px -32px rgba(2,6,23,.85);transition:transform .35s ease,box-shadow .35s ease,background .35s ease,color .35s ease}
+.hero-cta-alt:hover{background:rgba(255,255,255,.92);color:#0f172a!important;transform:translateY(-4px);box-shadow:0 34px 80px -36px rgba(255,255,255,.5)}
+.hero-highlights{background:rgba(15,23,42,.4);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(18px);box-shadow:0 40px 60px -50px rgba(2,6,23,.9);gap:clamp(.75rem,2vw,1.5rem)}
+.hero-highlights span{display:inline-flex;align-items:center;padding:.5rem 1.1rem;border-radius:9999px;background:rgba(15,23,42,.6);border:1px solid rgba(255,255,255,.15);transition:transform .3s ease,box-shadow .3s ease,background .3s ease}
+.hero-highlights span:hover{transform:translateY(-4px);background:rgba(255,255,255,.18);box-shadow:0 18px 35px -28px rgba(56,189,248,.65)}
+@keyframes heroOrbFloat{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(12px,-16px,0) scale(1.08)}}
+#processus .grid{counter-reset:process-step;position:relative;z-index:1}
+#processus .service-card::after{counter-increment:process-step;content:counter(process-step,decimal-leading-zero);position:absolute;top:1.5rem;right:1.75rem;font-size:clamp(2rem,4vw,2.75rem);font-weight:700;letter-spacing:.12em;color:rgba(148,163,184,.25);transition:color .35s ease,transform .35s ease;pointer-events:none}
+#processus .service-card:hover::after{color:rgba(125,211,252,.75);transform:translate3d(-4px,-6px,0)}
+@media (max-width:768px){.hero-inner{padding-block:2rem}.hero-ornaments{inset:-35% -20%}.hero-orb-left,.hero-orb-right,.hero-glow{filter:blur(50px);opacity:.45}.hero-content{padding:clamp(2rem,6vw,2.75rem)}}
