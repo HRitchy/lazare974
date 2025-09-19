@@ -11327,7 +11327,7 @@ function Fv() {
     setExpandedFaq(O => O === T ? null : T);
   };
   return d.jsxs("div", {
-    className: "min-h-screen bg-background",
+    className: "min-h-screen bg-background page-shell",
     children: [d.jsx("header", {
       className: "sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 enhanced-header",
       children: d.jsxs("div", {
@@ -11435,12 +11435,42 @@ function Fv() {
                 className: "h-4 w-4 text-primary"
               }), "Installation sur toute l'île"]
             })]
+          }), d.jsxs("div", {
+            className: "mt-10 grid gap-4 sm:grid-cols-3 hero-stats",
+            children: [d.jsxs("div", {
+              className: "hero-stat",
+              children: [d.jsx("span", {
+                className: "hero-stat-value",
+                children: "24h"
+              }), d.jsx("span", {
+                className: "hero-stat-label",
+                children: "Devis envoyé"
+              })]
+            }), d.jsxs("div", {
+              className: "hero-stat",
+              children: [d.jsx("span", {
+                className: "hero-stat-value",
+                children: "48h"
+              }), d.jsx("span", {
+                className: "hero-stat-label",
+                children: "Installation planifiée"
+              })]
+            }), d.jsxs("div", {
+              className: "hero-stat",
+              children: [d.jsx("span", {
+                className: "hero-stat-value",
+                children: "2 ans"
+              }), d.jsx("span", {
+                className: "hero-stat-label",
+                children: "Garantie constructeur"
+              })]
+            })]
           })]
         })
       })
     }), d.jsx("section", {
       id: "processus",
-      className: "py-20 bg-background",
+      className: "py-20 bg-background process-section",
       children: d.jsxs("div", {
         className: "container mx-auto px-4",
         children: [d.jsxs("div", {
@@ -11453,18 +11483,21 @@ function Fv() {
             children: "Du premier échange à la mise en service, Lazare974.tech sécurise chaque phase de votre projet."
           })]
         }), d.jsx("div", {
-          className: "mt-12 grid gap-8 md:grid-cols-3",
+          className: "mt-12 grid gap-8 md:grid-cols-3 process-grid",
           children: processSteps.map(T => {
             const O = T.icon;
             return d.jsxs("div", {
-              className: "service-card h-full rounded-2xl border bg-card p-8 text-left",
+              className: "service-card h-full rounded-2xl border bg-card p-8 text-left process-card",
               children: [d.jsxs("div", {
-                className: "mb-6 flex items-center justify-between",
+                className: "mb-6 flex items-center justify-between process-card-header",
                 children: [d.jsx("span", {
-                  className: "text-xs font-semibold uppercase tracking-widest text-primary",
+                  className: "text-xs font-semibold uppercase tracking-widest text-primary process-step-label",
                   children: T.label
-                }), d.jsx(O, {
-                  className: "h-10 w-10 text-primary"
+                }), d.jsx("span", {
+                  className: "process-icon",
+                  children: d.jsx(O, {
+                    className: "h-10 w-10 text-primary"
+                  })
                 })]
               }), d.jsx("h3", {
                 className: "text-2xl font-semibold mb-3",
@@ -11482,7 +11515,7 @@ function Fv() {
       })
     }), d.jsx("section", {
       id: "services",
-      className: "py-20 bg-muted/30",
+      className: "py-20 bg-muted/30 service-section",
       children: d.jsxs("div", {
         className: "container mx-auto px-4",
         children: [d.jsxs("div", {
@@ -11606,7 +11639,7 @@ function Fv() {
               })
             })]
           }), d.jsxs("div", {
-            className: "relative overflow-hidden rounded-lg",
+            className: "relative overflow-hidden rounded-lg service-image-card",
             children: [d.jsx("img", {
               src: Wv,
               alt: "Technicien installant une borne",
@@ -11636,7 +11669,7 @@ function Fv() {
       })
     }), d.jsx("section", {
       id: "apropos",
-      className: "py-20",
+      className: "py-20 about-section",
       children: d.jsx("div", {
         className: "container mx-auto px-4",
         children: d.jsxs("div", {
@@ -11694,7 +11727,7 @@ function Fv() {
           }), d.jsx("div", {
             className: "relative",
             children: d.jsx("div", {
-              className: "bg-primary/10 rounded-2xl p-8",
+              className: "bg-primary/10 rounded-2xl p-8 about-stats-card",
               children: d.jsxs("div", {
                 className: "text-center",
                 children: [d.jsx($u, {
@@ -11732,7 +11765,7 @@ function Fv() {
       })
     }), d.jsx("section", {
       id: "faq",
-      className: "py-20 bg-muted/20",
+      className: "py-20 bg-muted/20 faq-section",
       children: d.jsxs("div", {
         className: "container mx-auto px-4",
         children: [d.jsxs("div", {
