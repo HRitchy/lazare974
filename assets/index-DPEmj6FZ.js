@@ -11296,6 +11296,35 @@ function Fv() {
     question: "Proposez-vous un service après-vente ?",
     answer: "Oui, Lazare974.tech assure un support 7j/7 par téléphone et peut intervenir sur site sous 48h en cas de besoin. Des contrats de maintenance préventive sont également disponibles."
   }];
+  const financingPrograms = [{
+    title: "Prime ADVENIR",
+    amount: "Jusqu'à 960 €",
+    description: "Subvention nationale pour l'installation de bornes individuelles en habitat privé.",
+    highlights: ["Accompagnement complet pour monter le dossier", "Versement après travaux sur présentation des justificatifs"]
+  }, {
+    title: "Crédit d'impôt transition énergétique",
+    amount: "Plafond 300 €",
+    description: "Réduction d'impôt sur le revenu pour l'achat et la pose d'une borne de recharge.",
+    highlights: ["Éligible pour les résidences principales et secondaires", "Facturation détaillée fournie par nos équipes"]
+  }, {
+    title: "Aides locales et énergéticiens",
+    amount: "Montant variable",
+    description: "Primes complémentaires proposées par la Région, les communes ou votre fournisseur d'énergie.",
+    highlights: ["Veille administrative assurée par Lazare974.tech", "Optimisation des aides cumulables pour réduire le reste à charge"]
+  }];
+  const testimonials = [{
+    name: "Sophie M.",
+    role: "Saint-Denis",
+    comment: "Installation rapide et équipe très pro. Les démarches pour la prime ADVENIR ont été gérées du début à la fin."
+  }, {
+    name: "Julien R.",
+    role: "Le Tampon",
+    comment: "Le technicien a tout expliqué clairement et a optimisé la puissance de charge selon notre usage quotidien."
+  }, {
+    name: "Nadia P.",
+    role: "Saint-Paul",
+    comment: "Suivi sérieux, délais respectés et prise en main de l'application. Nous recommandons sans hésiter !"
+  }];
   const handleSubmit = async T => {
     T.preventDefault();
     if (isSubmitting) return;
@@ -11347,9 +11376,17 @@ function Fv() {
             className: "text-foreground hover:text-primary transition-colors",
             children: "Étapes"
           }), d.jsx("a", {
+            href: "#financement",
+            className: "text-foreground hover:text-primary transition-colors",
+            children: "Financement"
+          }), d.jsx("a", {
             href: "#services",
             className: "text-foreground hover:text-primary transition-colors",
             children: "Services"
+          }), d.jsx("a", {
+            href: "#avis",
+            className: "text-foreground hover:text-primary transition-colors",
+            children: "Avis clients"
           }), d.jsx("a", {
             href: "#faq",
             className: "text-foreground hover:text-primary transition-colors",
@@ -11397,24 +11434,29 @@ function Fv() {
             children: "Devis détaillé sous 24h et techniciens certifiés IRVE sur toute l'île."
           }), d.jsxs("div", {
             className: "flex flex-col sm:flex-row gap-4 justify-center",
-            children: [d.jsxs(Pu, {
+            children: [d.jsx(Pu, {
               size: "lg",
               variant: "secondary",
+              asChild: !0,
               className: "text-lg px-8 py-3 hero-cta",
-              children: [d.jsx($u, {
-                className: "mr-2 h-5 w-5"
-              }), "Devis gratuit"]
+              children: d.jsxs("a", {
+                href: "#contact",
+                className: "inline-flex items-center justify-center",
+                children: [d.jsx($u, {
+                  className: "mr-2 h-5 w-5"
+                }), "Devis gratuit"]
+              })
             }), d.jsx(Pu, {
               size: "lg",
               variant: "outline",
               asChild: !0,
               className: "text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-primary hero-cta-alt",
               children: d.jsxs("a", {
-                href: "#contact",
+                href: "#financement",
                 className: "inline-flex items-center justify-center",
-                children: [d.jsx(Ef, {
+                children: [d.jsx(Bd, {
                   className: "mr-2 h-5 w-5"
-                }), "Nous contacter"]
+                }), "Aides financières"]
               })
             })]
           }), d.jsxs("div", {
@@ -11434,6 +11476,11 @@ function Fv() {
               children: [d.jsx(Ft, {
                 className: "h-4 w-4 text-primary"
               }), "Installation sur toute l'île"]
+            }), d.jsxs("span", {
+              className: "flex items-center gap-2",
+              children: [d.jsx(Ft, {
+                className: "h-4 w-4 text-primary"
+              }), "Aides financières gérées"]
             })]
           }), d.jsxs("div", {
             className: "mt-10 grid gap-4 sm:grid-cols-3 hero-stats",
@@ -11511,6 +11558,72 @@ function Fv() {
               })]
             }, T.title);
           })
+        })]
+      })
+    }), d.jsx("section", {
+      id: "financement",
+      className: "py-20 bg-muted/30 financing-section",
+      children: d.jsxs("div", {
+        className: "container mx-auto px-4",
+        children: [d.jsxs("div", {
+          className: "text-center max-w-3xl mx-auto",
+          children: [d.jsx("h2", {
+            className: "text-4xl font-bold mb-4",
+            children: "Financer votre borne de recharge"
+          }), d.jsx("p", {
+            className: "text-lg text-muted-foreground",
+            children: "Nous vous aidons à mobiliser toutes les aides disponibles à La Réunion."
+          })]
+        }), d.jsx("div", {
+          className: "mt-12 grid gap-8 md:grid-cols-3 financing-grid",
+          children: financingPrograms.map((T, O) => d.jsxs(li, {
+            className: "financing-card",
+            children: [d.jsxs(ti, {
+              className: "space-y-4",
+              children: [d.jsxs("div", {
+                className: "flex items-center justify-between",
+                children: [d.jsx(ei, {
+                  className: "text-left",
+                  children: T.title
+                }), d.jsx("span", {
+                  className: "inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary",
+                  children: T.amount
+                })]
+              }), d.jsx(ai, {
+                children: T.description
+              })]
+            }), d.jsx(ni, {
+              children: d.jsx("ul", {
+                className: "space-y-2",
+                children: T.highlights.map((H, Q) => d.jsxs("li", {
+                  className: "flex items-start gap-2",
+                  children: [d.jsx(Ft, {
+                    className: "mt-1 h-4 w-4 text-primary"
+                  }), d.jsx("span", {
+                    className: "text-sm text-muted-foreground leading-relaxed",
+                    children: H
+                  })]
+                }, `${T.title}-${Q}`))
+              })
+            })]
+          }, `${T.title}-${O}`))
+        }), d.jsxs("div", {
+          className: "mt-12 flex flex-col items-center gap-4 text-center",
+          children: [d.jsx("p", {
+            className: "text-muted-foreground max-w-2xl",
+            children: "Nos conseillers montent les dossiers de subventions et vérifient votre éligibilité pour réduire votre reste à charge."
+          }), d.jsx(Pu, {
+            variant: "secondary",
+            size: "lg",
+            asChild: !0,
+            children: d.jsxs("a", {
+              href: "#contact",
+              className: "inline-flex items-center justify-center gap-2",
+              children: [d.jsx(Ef, {
+                className: "h-5 w-5"
+              }), "Parler à un conseiller"]
+            })
+          })]
         })]
       })
     }), d.jsx("section", {
@@ -11664,6 +11777,58 @@ function Fv() {
                 children: "Solutions adaptées aux particuliers"
               })
             })]
+          })]
+        })]
+      })
+    }), d.jsx("section", {
+      id: "avis",
+      className: "py-20 bg-background reviews-section",
+      children: d.jsxs("div", {
+        className: "container mx-auto px-4",
+        children: [d.jsxs("div", {
+          className: "max-w-3xl mx-auto text-center",
+          children: [d.jsx("h2", {
+            className: "text-4xl font-bold mb-4",
+            children: "Ils nous font confiance"
+          }), d.jsx("p", {
+            className: "text-lg text-muted-foreground",
+            children: "Des particuliers accompagnés sur toute l'île témoignent de leur expérience Lazare974.tech."
+          })]
+        }), d.jsx("div", {
+          className: "mt-12 grid gap-8 md:grid-cols-3 reviews-grid",
+          children: testimonials.map((T, O) => d.jsxs(li, {
+            className: "review-card",
+            children: [d.jsx(ni, {
+              className: "space-y-4",
+              children: [d.jsxs("div", {
+                className: "inline-flex items-center gap-2 review-badge",
+                children: [d.jsx(Ft, {
+                  className: "h-4 w-4"
+                }), d.jsx("span", {
+                  className: "text-sm font-semibold uppercase tracking-widest",
+                  children: "Avis vérifié"
+                })]
+              }), d.jsx("p", {
+                className: "review-comment text-lg leading-relaxed",
+                children: T.comment
+              })]
+            }), d.jsxs("div", {
+              className: "px-6 review-footer",
+              children: [d.jsx("p", {
+                className: "text-lg font-semibold",
+                children: T.name
+              }), d.jsx("p", {
+                className: "text-sm text-muted-foreground",
+                children: T.role
+              })]
+            })]
+          }, `${T.name}-${O}`))
+        }), d.jsxs("div", {
+          className: "mt-12 flex flex-col items-center gap-2 text-center text-muted-foreground",
+          children: [d.jsx("p", {
+            children: "Plus de 100 installations réalisées avec une satisfaction client de 4,9/5."
+          }), d.jsx("p", {
+            children: "Nous vous accompagnons avant, pendant et après la mise en service."
           })]
         })]
       })
@@ -12020,13 +12185,35 @@ function Fv() {
             }), d.jsxs("ul", {
               className: "space-y-2 text-muted-foreground",
               children: [d.jsx("li", {
-                children: "Installation à domicile"
+                children: d.jsx("a", {
+                  href: "#services",
+                  className: "hover:text-primary transition-colors",
+                  children: "Installation à domicile"
+                })
               }), d.jsx("li", {
-                children: "Maintenance"
+                children: d.jsx("a", {
+                  href: "#services",
+                  className: "hover:text-primary transition-colors",
+                  children: "Maintenance & SAV"
+                })
               }), d.jsx("li", {
-                children: "Conseil technique"
+                children: d.jsx("a", {
+                  href: "#services",
+                  className: "hover:text-primary transition-colors",
+                  children: "Conseil technique"
+                })
               }), d.jsx("li", {
-                children: "SAV"
+                children: d.jsx("a", {
+                  href: "#financement",
+                  className: "hover:text-primary transition-colors",
+                  children: "Aides financières"
+                })
+              }), d.jsx("li", {
+                children: d.jsx("a", {
+                  href: "#avis",
+                  className: "hover:text-primary transition-colors",
+                  children: "Avis clients"
+                })
               })]
             })]
           }), d.jsxs("div", {
